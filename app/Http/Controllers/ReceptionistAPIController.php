@@ -87,8 +87,7 @@ class ReceptionistAPIController extends Controller
     catch(\Exception $ex){
 
         return "Mail Sent Failed";
-    }
-         
+    }   
     }
 
     public function updateReceptionist(Request $req){
