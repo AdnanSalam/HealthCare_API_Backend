@@ -65,30 +65,7 @@ class ReceptionistAPIController extends Controller
     
   }
     
-    public function mail(Request $request){
-        $data = ['name'=>"Adnan", 'data'=>'Hello People'];
-
-       
-
-        $emailAddress = $request->remail;
-
-        $user['to'] = $emailAddress;
-
-    try{
-        Mail::send('mail',$data,function($messages) use ($user){
-
-            $messages->to($user['to']);
-
-            $messages->subject('laravel Mailing ');
-        
-        });
-            return "Mail Sent Successfully";
-    }
-    catch(\Exception $ex){
-
-        return "Mail Sent Failed";
-    }   
-    }
+    
 
     public function updateReceptionist(Request $req){
         $re=Receptionist::where('rid',$req->rid)->first();
